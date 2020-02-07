@@ -5,14 +5,18 @@ phases:
     # runtime-versions:
 
     commands:
+      - echo 'installing terraform'
       - curl -O https://releases.hashicorp.com/terraform/0.12.10/terraform_0.12.10_linux_amd64.zip
       - yum install unzip
       - mkdir /bin/terraform 
       - unzip terraform_0.12.10_linux_amd64.zip -d /usr/local/bin/
+      - terraform --version
   build:
     commands:
       - echo 'build stage'
-      - terraform --version
+      - terraform init
+      - terraform apply -auto-approve
+      
   post_build:
     commands:
       - echo "post build stage"
