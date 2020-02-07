@@ -1,4 +1,7 @@
-install:
+version: 0.2
+
+phases:
+  install:
     # runtime-versions:
 
     commands:
