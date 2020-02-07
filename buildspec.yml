@@ -6,7 +6,7 @@ phases:
 
     commands:
       - curl -O https://releases.hashicorp.com/terraform/0.12.10/terraform_0.12.10_linux_amd64.zip
-      - apt-get install unzip
+      - yum install unzip
       - mkdir /bin/terraform 
       - unzip terraform_0.12.10_linux_amd64.zip -d /usr/local/bin/
   build:
