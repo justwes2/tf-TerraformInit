@@ -1,0 +1,15 @@
+install:
+    # runtime-versions:
+
+    commands:
+      - curl -O https://releases.hashicorp.com/terraform/0.12.10/terraform_0.12.10_linux_amd64.zip
+      - apt-get install unzip
+      - mkdir /bin/terraform 
+      - unzip terraform_0.12.10_linux_amd64.zip -d /usr/local/bin/
+  build:
+    commands:
+      - echo 'build stage'
+      - terraform --version
+  post_build:
+    commands:
+      - echo "post build stage"
